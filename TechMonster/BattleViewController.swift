@@ -51,8 +51,6 @@ class BattleViewController: UIViewController {
         enemyImageView.image = enemy.image
         enemyHPBar.progress = enemy.currentHP / enemy.maxHP
         
-        attackButton.isHidden = true
-        
         enemyAttackTimer = Timer.scheduledTimer(timeInterval: enemy.attackInterval, target: self, selector: #selector(self.enemyAttack), userInfo: nil, repeats: true)
     }
     

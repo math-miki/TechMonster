@@ -67,12 +67,18 @@
                                 <state key="normal" title="冒険に行く" backgroundImage="gold_button.png">
                                     <color key="titleColor" red="0.50985670336787559" green="0.36400236392918001" blue="0.11871735628650941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="startBattle" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ir-gy-jkZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="levelLabel" destination="EbN-G8-QHw" id="Czg-DT-eRp"/>
+                        <outlet property="nameLabel" destination="vly-Na-dD3" id="ex7-fM-3qi"/>
+                        <outlet property="staminaBar" destination="Yls-Ap-keR" id="mgF-ah-Icd"/>
                         <segue destination="tWo-mU-loy" kind="presentation" identifier="startBattle" modalTransitionStyle="crossDissolve" id="ViD-7Y-Z5T"/>
                     </connections>
                 </viewController>
@@ -99,6 +105,9 @@
                                 <state key="normal" title="こうげき" backgroundImage="gold_button.png">
                                     <color key="titleColor" red="0.5098567034" green="0.36400236390000001" blue="0.11871735629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="playerAttack" destination="tWo-mU-loy" eventType="touchUpInside" id="Gpu-tr-G7t"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="battlebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="U3v-ia-kNh">
                                 <rect key="frame" x="0.0" y="44" width="414" height="414"/>
@@ -117,7 +126,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iac-YL-5hX">
-                                <rect key="frame" x="219" y="369" width="44" height="22"/>
+                                <rect key="frame" x="219" y="369" width="150" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,7 +137,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbt-Ek-yaX">
-                                <rect key="frame" x="45" y="133" width="44" height="22"/>
+                                <rect key="frame" x="45" y="133" width="150" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,6 +147,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="1md-Lo-fde"/>
                     </view>
+                    <connections>
+                        <outlet property="attackButton" destination="mh8-Um-zd7" id="eZq-cu-SCx"/>
+                        <outlet property="enemyHPBar" destination="rp4-1Z-Jq4" id="XPy-yh-oeF"/>
+                        <outlet property="enemyImageView" destination="u7T-Oh-n9W" id="xSC-yC-4OK"/>
+                        <outlet property="enemyNameLabel" destination="pbt-Ek-yaX" id="eU8-Xh-yJe"/>
+                        <outlet property="playerHPBar" destination="8aW-oU-yBS" id="ad0-yK-Yq7"/>
+                        <outlet property="playerImageView" destination="lwn-wa-sJv" id="mCD-Fc-N0g"/>
+                        <outlet property="playerNameLabel" destination="iac-YL-5hX" id="8vT-3z-YfK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Stb-Qr-GDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
